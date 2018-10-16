@@ -1,5 +1,7 @@
 <?php
- 
+
+
+
 class Admin extends MY_Controller{
 
     function __construct()
@@ -12,7 +14,7 @@ class Admin extends MY_Controller{
             'M_ActionUnit', 'M_Students'
         ]);
     }
-j
+
     function index(){
         $data['page_title'] = 'Dashboard';
         $data['count_action_units'] = $this->M_ActionUnit->count_action_units();
