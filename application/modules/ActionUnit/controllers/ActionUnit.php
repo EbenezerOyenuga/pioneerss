@@ -130,6 +130,7 @@ class ActionUnit extends MY_Controller{
                 $students_table .="<td>{$value->phone}</td>";
                 $students_table .="<td>{$value->program}</td>";
                 $students_table .="<td>{$value->residence}</td>";
+                $students_table .="<td>{$value->month} {$value->day}</td>";
 
                 $students_table .= "</tr>";
                 $counter++;

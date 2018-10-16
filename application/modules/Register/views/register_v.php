@@ -79,6 +79,18 @@
 
                                         </select>
                                 </div>
+                                <div class="col-md-4 col-md-offset-1">
+                                  <label for="" class="text-uppercase text-sm">Birth Month:</label>
+                                          <select class="form-control mb" name = "birthmonth">
+                                              <option>Select Month:</option>
+                                              <?php echo $months ; ?>
+
+                                          </select>
+                                  </div>
+                                  <div class="col-md-4 col-md-offset-1">
+                                    <label for="" class="text-uppercase text-sm">Birth Day:</label>
+                                    <input type="number" placeholder="Your day of birth" class="form-control mb" name="birthday" min="1" max="31">
+                                  </div>
                               </div>
                                 <?php echo $action_units; ?>
                                 <button class="btn btn-primary btn-block" type="submit">SIGN UP</button>

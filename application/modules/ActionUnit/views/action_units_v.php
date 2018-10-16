@@ -104,6 +104,7 @@
                                                       <th>Phone</th>
                                                       <th>Program</th>
                                                       <th>Residence</th>
+                                                      <th>Birthday</th>
 
                                                   </tr>
                                                   </thead>
@@ -116,6 +117,7 @@
                                                     <th>Phone</th>
                                                     <th>Program</th>
                                                     <th>Residence</th>
+                                                    <th>Birthday</th>
                                                   </tr>
 
                                                   </tfoot>

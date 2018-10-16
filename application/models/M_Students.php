@@ -22,7 +22,9 @@ class M_Students extends CI_Model
             'phone' => $this->input->post('phone', TRUE),
             'residence_id' => $this->input->post('residence', TRUE),
             'program_id' => $this->input->post('program', TRUE),
-            'unit_id' => $this->input->post('action_units', TRUE)
+            'unit_id' => $this->input->post('action_units', TRUE),
+            'month_id' => $this->input->post('birthmonth', TRUE),
+            'day' => $this->input->post('birthday', TRUE)
         );
         $this->db->insert('students', $posted_data);
 
@@ -56,10 +58,11 @@ class M_Students extends CI_Model
 
 
     function get_action_units_students($id){
-        $this->db->select('othernames, surname, matricno, email, phone, program, residence');
+        $this->db->select('othernames, surname, matricno, email, phone, program, residence, month, day');
         $this->db->from('students');
         $this->db->join('tbl_programs', 'students.program_id = tbl_programs.program_id');
         $this->db->join('tbl_residence', 'students.residence_id = tbl_residence.residence_id');
+        $this->db->join('tbl_months', 'students.month_id = tbl_months.month_id');
         $this->db->where('unit_id', $id);
         $query = $this->db->get();
 
@@ -82,11 +85,18 @@ class M_Students extends CI_Model
     }
 
     function get_all_students(){
-        $this->db->select('othernames, surname, matricno, email, phone, program, residence, name');
+        $this->db->select('othernames, surname, matricno, email, phone, program, residence, name, month, day');
         $this->db->from('students');
         $this->db->join('tbl_programs', 'students.program_id = tbl_programs.program_id');
         $this->db->join('tbl_residence', 'students.residence_id = tbl_residence.residence_id');
         $this->db->join('action_units', 'students.unit_id = action_units.id');
+        $this->db->join('tbl_months', 'students.month_id = tbl_months.month_id');
+        $query = $this->db->get();
+        return $query->result();
+    }
+    function get_months(){
+        $this->db->select('*');
+        $this->db->from('tbl_months');
         $query = $this->db->get();
         return $query->result();
     }
