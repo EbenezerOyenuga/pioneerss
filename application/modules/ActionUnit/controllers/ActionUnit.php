@@ -30,7 +30,7 @@ class ActionUnit extends MY_Controller{
                   $action_units .= "<div class='col-md-4 col-md-offset-1'>";
                   $action_units .= "<input name='action_units' type='radio' id='{$value->id}' value='{$value->id}'/>";
                   $action_units .= "<label for='{$value->id}'>   {$value->name}</label><br/>";
-                  $action_units .= "<img src='{$value->coordinator_picture}' style='width: 128px; height: 128px'/><br/>";
+                  $action_units .= "<img src='{$value->coordinator_picture}' style='width: 200px; height: 200px'/><br/>";
 
                   $action_units .= "<label for='{$value->id}'>Coordinated by {$value->coordinator}</label><br/>";
                   $action_units .= "</div>";
