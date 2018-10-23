@@ -26,6 +26,7 @@ class Admin extends MY_Controller{
     function load_semesters(){
         $this->loadstudents->display_semesters();
     }
+    
     function load_programs($semester_id){
         $this->loadstudents->display_programs($semester_id);
     }
